@@ -1,0 +1,10 @@
+
+// go-embed-spa/cmd/http/main.go
+log.Printf("the server is listening to port %s", os.Getenv("APP_PORT"))
+log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("APP_PORT")), nil))
+
+// go-embed-spa/cmd/echo/main.go
+log.Fatal(app.Start(fmt.Sprintf(":%s", os.Getenv("APP_PORT"))))
+
+// go-embed-spa/cmd/fiber/main.go
+log.Fatal(app.Listen(fmt.Sprintf(":%s", os.Getenv("APP_PORT"))))

@@ -1,0 +1,10 @@
+FROM ubuntu:latest
+
+WORKDIR /app
+
+COPY ./embed-web-spa-gin ./
+COPY ./web/dist ./web/dist
+
+EXPOSE 3030
+
+CMD ["./embed-web-spa-gin","-port","3030"]
